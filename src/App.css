@@ -1,18 +1,28 @@
 .App {
   text-align: center;
+  box-sizing: border-box;
+  /* background-image: url("./components/img/pexels.jpeg"); */
+  background-repeat: repeat;
+  background-origin: content-box;
 }
 
-.App-logo {
-  height: 40vmin;
+.logo {
+  height: 10vmin;
   pointer-events: none;
 }
 
+.logo img {
+  position: absolute;
+  width: 100px;
+  right: 1000px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  .logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+/* 
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -22,17 +32,51 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
+} */
+/* 
 .App-link {
   color: #61dafb;
-}
+} */
 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotateY(360deg);
   }
+}
+
+.flex-container {
+  display: grid;
+  width: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 100%;
+
+  border-radius: 15%;
+  margin-bottom: 30px;
+}
+
+.fight_button {
+  border-radius: 10%;
+}
+
+.pokeId {
+  border: 1px solid groove;
+  border-radius: 50%;
+  background-color: rgb(221, 221, 240);
+  width: 100px;
+  margin: 0 auto;
+}
+
+.cardPhoto {
+  margin: 0 auto;
 }
