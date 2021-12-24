@@ -1,15 +1,121 @@
-import React from 'react'
+import React, { useRef, useEffect } from "react";
+import M from "materialize-css";
+
+import { Link } from "react-router-dom";
+import bg_2 from "../img/pokemon.jpg";
+import ContactForm from "./ContactForm";
 
 const Contact = () => {
-    return (
-        <div>
-            <main style={{ padding: "1rem 0" }}>
-                <h2>
-                    Contact Us!!!
-                </h2>
-            </main>
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+
+  const mySuperModal = useRef();
+  useEffect(() => {
+    if (mySuperModal.current) {
+      M.Modal.init(mySuperModal.current);
+    }
+
+    // if (myNav.current) {
+    //   M.Sidenav.init(myNav.current);
+    // }
+  }, []);
+
+  const me = {
+    name: "Ifeanyi Kingsley Nwabor",
+    email: "nwaborkingsley@gmail.com",
+    Linkedin: "https://de.linkedin.com/in/iknwabor",
+    GitHub: "https://github.com/Ifeanyi-Kingsley-Nwabor",
+  };
+  return (
+    <div className="container">
+      {/* <h3>{me.name}</h3> */}
+      <div className="row">
+        <div className="col s12 m6">
+          <div className="card">
+            <div className="card-image">
+              <img src={bg_2} alt="and this is me" />
+              <span className="card-title"></span>
+              {/* <Link
+                to={{
+                  pathname: "/contact-form"
+                  // search: "?sort=name",
+                  // hash: "#the-hash",
+                  // state: { serviceId },
+                }}
+                className="waves-effect waves-light btn-floating halfway-fab red modal-trigger"
+              >
+                <i className="material-icons">person</i>
+              </Link> */}
+              <a
+                className="waves-effect waves-light btn-floating halfway-fab  red modal-trigger"
+                href="#modal1"
+              >
+                <i className="material-icons">email</i>
+              </a>
+              <div id="modal1" className="modal col s12 m8 " ref={mySuperModal}>
+                <div className="modal-content ">
+                  <h4>Send a quick message...</h4>
+                  <p>
+                    The Email is checked quite regularly, so you can always
+                    expect a prompt response.
+                  </p>
+                  <ContactForm />
+                </div>
+                <div className="modal-footer">
+                  <a
+                    href="#!"
+                    className="modal-close waves-effect waves-green btn-flat"
+                  >
+                    Close
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="card-content">
+              <p>
+                Interested to know more or would like to contribute or discuss
+                about anything... Then click on the <i>red button</i> button to
+                shoot me a quick message. You can also check out the contact
+                links shown below. I am always open to your feedback and look
+                forward to building super fantastic products with youuu...
+              </p>
+            </div>
+          </div>
         </div>
-    )
-}
+      </div>
+      <div className="contact-container">
+        <p>Email: {me.email}</p>
+        <p>
+          <a
+            className="waves-effect waves-light btn-floating social linkedin"
+            // className="waves-effect waves-light btn"
+            href={me.Linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {/* Linkedin */}
+            <i className="fa fa-linkedin"></i>
+          </a>
+        </p>
+        <p>
+          <a
+            // className="waves-effect waves-light btn-floating social github"
+            className="waves-effect waves-light btn"
+            href={me.GitHub}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+            {/* <i className="fa fa-github"></i> */}
+          </a>
+        </p>
+      </div>
+    </div>
+  );
+};
 
 export default Contact;
