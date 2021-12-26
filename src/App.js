@@ -9,6 +9,7 @@ import LeaderBoard from "./components/LeaderBoard";
 import Contact from "./components/Contact";
 import SinglePokemon from "./components/SinglePokemon";
 import PokemonInfo from "./components/PokemonInfo";
+import Footer from "./components/Footer";
 
 import "./App.css";
 
@@ -21,7 +22,7 @@ const App = () => {
   const heroku = "https://pokefight-back-end.herokuapp.com/api/pokemon";
 
   const handleClick = (onePokemon) => {
-    console.log(onePokemon);
+    // console.log(onePokemon);
     let updatedPokemon = [...selectedPokemon, onePokemon];
     setSelectedPokemon(updatedPokemon);
   };
@@ -168,41 +169,9 @@ const App = () => {
           }
         />
       </Switch>
+      <Footer />
     </div>
   );
 };
-
-// const homeNestedRoutes = () => {
-//   let match = useRouteMatch();
-//   return (
-//     <div>
-//       <h2>Topics</h2>
-
-// <div>
-//       <nav>
-//         <ul>
-//           <li>
-//             <NavLink className='nav_link' to={`${match.url}/poke-info`}>Information about this guy...</NavLink>
-//           </li>
-//           <li>
-//             <NavLink className='nav_link' to={`${match.url}/pokemon`}>
-//             Oh... Look who we have here
-//             </NavLink>
-//           </li>
-//         </ul>
-//       </nav>
-//       <Outlet />
-// </div>
-//       <Routes>
-//         <Route path={`${match.path}/:id`}>
-//           <Pokemon />
-//         </Route>
-//         <Route path={`${match.path}/:id/:info`}>
-//           <PokeInfo/>
-//         </Route>
-//       </Routes>
-//     </div>
-//   );
-// }
 
 export default App;

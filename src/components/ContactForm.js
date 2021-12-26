@@ -69,13 +69,13 @@ const ContactForm = () => {
                   required
                 />
 
-                {/* <span
+                <span
                   className="helper-text"
-                  data-error="wrong"
-                  data-success="right"
+                  data-error="Incorrect email address"
+                  data-success="Good to go!"
                 >
                   Helper text
-                </span> */}
+                </span>
               </div>
             </div>
             <div className="row">

@@ -4,6 +4,8 @@ import SinglePokemon from "./SinglePokemon";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import M from "materialize-css";
+import versus from "../img/versus.png";
+import PlayGameModal from "./PlayGameModal";
 
 const PokemonFight = ({
   pokemon,
@@ -37,7 +39,7 @@ const PokemonFight = ({
     return <h2>Loading...</h2>;
   }
 
-  console.log(selectedPokemon);
+  // console.log(selectedPokemon);
 
   return (
     <>
@@ -47,26 +49,36 @@ const PokemonFight = ({
       </h3>
       {selectedPokemon.length > 0 && (
         <>
-          <h5>Fighter 1:</h5>
-          <SinglePokemon selectedId={selectedPokemon[0].id} />
-          {selectedPokemon.length > 1 && (
-            <>
-              <h5>Fighter 2:</h5>
-              <SinglePokemon selectedId={selectedPokemon[1].id} />
-              <Button
-                className="fight_button modal-trigger"
-                variant="danger"
-                onClick={() => fightLogic()}
-                // href="#modal1"
-                // data-target="modal1"
-              >
-                Fight!
-              </Button>
-              <Button className="fight_button" variant="danger" href="/game">
-                Reset
-              </Button>
-            </>
-          )}
+          <div className="common-links">
+            <div className="fight-container-1">
+              <h5>Fighter 1: {selectedPokemon[0].name.english}</h5>
+              <SinglePokemon selectedId={selectedPokemon[0].id} />
+            </div>
+
+            <img className="versus responsive-img" src={versus} alt="versus" />
+            {selectedPokemon.length > 1 && (
+              <div className="fight-container-2">
+                <h5>Fighter 2: {selectedPokemon[1].name.english}</h5>
+                <SinglePokemon selectedId={selectedPokemon[1].id} />
+              </div>
+            )}
+          </div>
+
+          <div className="common-links">
+            <Button
+              className="fight_button modal-trigger"
+              variant="danger"
+              onClick={() => fightLogic()}
+              href="#modal1"
+              // data-target="modal1"
+            >
+              Fight!
+            </Button>
+            <Button className="fight_button" variant="danger" href="/game">
+              Reset
+            </Button>
+          </div>
+
           {/* <div id="modal1" className="modal col s12 m8 " ref={mySuperModal}>
             <div className="modal-content ">
               <h2>Congratulations... </h2>
@@ -81,7 +93,13 @@ const PokemonFight = ({
               </a>
             </div>
           </div> */}
-          {fightWinner && <h2>The Winner is {fightWinner}!</h2>}
+
+          {/* {fightWinner && ( */}
+          <PlayGameModal fightWinner={fightWinner} />
+          {/* // <div className="card-panel hoverable">
+            //   <h2>The Winner is {fightWinner}!</h2>
+            // </div> */}
+          {/* )} */}
         </>
       )}
       <div>

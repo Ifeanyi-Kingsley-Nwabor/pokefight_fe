@@ -32,24 +32,13 @@ const Contact = () => {
   };
   return (
     <div className="container">
-      {/* <h3>{me.name}</h3> */}
-      <div className="row">
-        <div className="col s12 m6">
-          <div className="card">
+      <div className="row contact-card">
+        <div className="col s12 ">
+          <div className="card ">
             <div className="card-image">
-              <img src={bg_2} alt="and this is me" />
+              <img src={bg_2} alt="and this is me" className="responsive-img" />
               <span className="card-title"></span>
-              {/* <Link
-                to={{
-                  pathname: "/contact-form"
-                  // search: "?sort=name",
-                  // hash: "#the-hash",
-                  // state: { serviceId },
-                }}
-                className="waves-effect waves-light btn-floating halfway-fab red modal-trigger"
-              >
-                <i className="material-icons">person</i>
-              </Link> */}
+
               <a
                 className="waves-effect waves-light btn-floating halfway-fab  red modal-trigger"
                 href="#modal1"
@@ -89,19 +78,18 @@ const Contact = () => {
       </div>
       <div className="contact-container">
         <p>Email: {me.email}</p>
-        <p>
+        <div className="common-links">
           <a
-            className="waves-effect waves-light btn-floating social linkedin"
-            // className="waves-effect waves-light btn"
+            // className="waves-effect waves-light btn-floating social linkedin"
+            className="waves-effect waves-light btn"
             href={me.Linkedin}
             target="_blank"
             rel="noopener noreferrer"
           >
-            {/* Linkedin */}
-            <i className="fa fa-linkedin"></i>
+            Linkedin
+            {/* <i className="fa fa-linkedin"></i> */}
           </a>
-        </p>
-        <p>
+
           <a
             // className="waves-effect waves-light btn-floating social github"
             className="waves-effect waves-light btn"
@@ -112,7 +100,7 @@ const Contact = () => {
             GitHub
             {/* <i className="fa fa-github"></i> */}
           </a>
-        </p>
+        </div>
       </div>
     </div>
   );

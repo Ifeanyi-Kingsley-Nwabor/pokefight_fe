@@ -20,7 +20,7 @@ const PokemonInfo = () => {
       <Card style={{ width: "18rem" }}>
         <Card.Img
           variant="top"
-          className="cardPhoto"
+          className="cardPhoto responsive-img"
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`}
           style={{ width: "100px" }}
         />
