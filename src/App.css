@@ -243,3 +243,7 @@
 
   margin: 0 1100px 0 100px;
 }
+
+.leaderboard {
+  min-height: 100vh;
+}
