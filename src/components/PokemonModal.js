@@ -1,5 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import M from "materialize-css";
+import { Link } from "react-router-dom";
+// import SinglePokemon from "./SinglePokemon";
 
 const PokemonModal = ({ onePokemon }) => {
   const { name, id, type, base } = onePokemon;
@@ -58,14 +60,15 @@ const PokemonModal = ({ onePokemon }) => {
             </div>
           </div>
         )}
+
         <div className="modal-footer">
-          <a
-            href="#!"
+          <Link
+            to="/"
             className="modal-close waves-effect waves-green btn-flat hoverable"
             id="pokemon-modal-close"
           >
             Close
-          </a>
+          </Link>
         </div>
       </div>
     </div>

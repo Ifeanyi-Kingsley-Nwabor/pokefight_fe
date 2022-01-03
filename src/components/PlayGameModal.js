@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import M from "materialize-css";
+import { Link } from "react-router-dom";
 
 const PlayGameModal = ({ fightWinner }) => {
   const mySuperModal = useRef();
@@ -16,12 +17,12 @@ const PlayGameModal = ({ fightWinner }) => {
           <h2>The Winner is {fightWinner}!</h2>
         </div>
         <div className="modal-footer">
-          <a
-            href="#!"
+          <Link
+            to="/game"
             className="modal-action modal-close waves-effect waves-green btn-flat"
           >
             Close
-          </a>
+          </Link>
         </div>
       </div>{" "}
     </>

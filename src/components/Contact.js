@@ -56,7 +56,7 @@ const Contact = () => {
                 </div>
                 <div className="modal-footer">
                   <a
-                    href="#!"
+                    href="/contact"
                     className="modal-close waves-effect waves-green btn-flat"
                   >
                     Close

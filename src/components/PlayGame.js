@@ -44,9 +44,16 @@ const PokemonFight = ({
   return (
     <>
       <h2>Ready to fight!</h2>
-      <h3>
-        Choose <b>two</b> contenders, then press <b>FIGHT</b>!
-      </h3>
+      {selectedPokemon.length < 1 && (
+        <h3>
+          Choose <b>two</b> contenders, then press <b>FIGHT</b>!
+        </h3>
+      )}
+      {selectedPokemon.length == 1 && (
+        <h3>
+          Select a second contender, then press <b>FIGHT</b>!
+        </h3>
+      )}
       {selectedPokemon.length > 0 && (
         <>
           <div className="common-links">
@@ -70,7 +77,6 @@ const PokemonFight = ({
               variant="danger"
               onClick={() => fightLogic()}
               href="#modal1"
-              // data-target="modal1"
             >
               Fight!
             </Button>

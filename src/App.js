@@ -10,6 +10,7 @@ import Contact from "./components/Contact";
 import SinglePokemon from "./components/SinglePokemon";
 import PokemonInfo from "./components/PokemonInfo";
 import Footer from "./components/Footer";
+import Search from "./components/Search";
 
 import "./App.css";
 
@@ -39,8 +40,9 @@ const App = () => {
     }
 
     // fetchData();
-    console.log({ saveUrl: `${heroku}/fight/save` });
-    fetch(`${heroku}/fight/save`, {
+    console.log({ saveUrl: `${heroku}/game/save` });
+
+    fetch(`${heroku}/game/save`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -115,7 +117,7 @@ const App = () => {
         </nav>
         <div className="logo">
           {/* <h5>Pokédex</h5> */}
-          <img src={logo} alt="" />
+          <img src={logo} className="App-logo" alt="logo" />
         </div>
       </div>
       {/* <header className="App-header">
@@ -124,6 +126,7 @@ const App = () => {
           Penguinie...
         </p>
       </header> */}
+      <Search />
 
       <Switch>
         <Route path="/pokemon/:id/:info">
@@ -134,7 +137,7 @@ const App = () => {
           <About />
         </Route>
 
-        <Route path="/game">
+        <Route exact path="/game">
           <PlayGame
             pokemon={pokemon}
             selectedPokemon={selectedPokemon}
