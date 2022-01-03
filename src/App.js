@@ -10,7 +10,6 @@ import Contact from "./components/Contact";
 import SinglePokemon from "./components/SinglePokemon";
 import PokemonInfo from "./components/PokemonInfo";
 import Footer from "./components/Footer";
-import Search from "./components/Search";
 
 import "./App.css";
 
@@ -126,7 +125,6 @@ const App = () => {
           Penguinie...
         </p>
       </header> */}
-      <Search />
 
       <Switch>
         <Route path="/pokemon/:id/:info">

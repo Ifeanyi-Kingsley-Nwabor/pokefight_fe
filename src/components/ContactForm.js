@@ -1,8 +1,7 @@
 import React, { useRef, useEffect } from "react";
+import { init } from "@emailjs/browser";
 import emailjs from "emailjs-com";
-const { REACT_APP_USER_ID } = process.env;
-const { REACT_APP_TEMPLATE_ID } = process.env;
-const { REACT_APP_SERVICE_ID } = process.env;
+init("user_2Nb5pJ0GlB55tEoLnnLyY");
 
 const ContactForm = () => {
   useEffect(() => {
@@ -11,6 +10,9 @@ const ContactForm = () => {
       behavior: "smooth",
     });
   });
+  // const { REACT_APP_USER_ID } = process.env;
+  // const { REACT_APP_TEMPLATE_ID } = process.env;
+  // const { REACT_APP_SERVICE_ID } = process.env;
 
   const form = useRef();
 
@@ -18,12 +20,12 @@ const ContactForm = () => {
     e.preventDefault();
 
     emailjs
-      //   .sendForm(
-      //     REACT_APP_SERVICE_ID,
-      //     REACT_APP_TEMPLATE_ID,
-      //     form.current,
-      //     REACT_APP_USER_ID
-      //   )
+      // .sendForm(
+      //   REACT_APP_SERVICE_ID,
+      //   REACT_APP_TEMPLATE_ID,
+      //   form.current,
+      //   REACT_APP_USER_ID
+      // )
 
       .sendForm(
         "service_akeri5h",

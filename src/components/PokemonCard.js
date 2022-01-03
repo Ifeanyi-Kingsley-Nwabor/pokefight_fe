@@ -1,13 +1,11 @@
-import React, { useRef, useState, useEffect } from "react";
-import { Card, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import React, { useRef, useEffect } from "react";
+import { Button } from "react-bootstrap";
+
 import M from "materialize-css";
 import PokemonModal from "./PokemonModal";
 
-import SinglePokemon from "./SinglePokemon";
-
 const PokemonCard = ({ onePokemon, handleClick, selectedPokemon }) => {
-  const { name, id, type, base } = onePokemon;
+  const { name, id } = onePokemon;
   const pathname = window.location.pathname;
 
   useEffect(() => {

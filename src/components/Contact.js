@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import M from "materialize-css";
 
-import { Link } from "react-router-dom";
 import bg_2 from "../img/pokemon.jpg";
 import ContactForm from "./ContactForm";
 
@@ -18,10 +17,6 @@ const Contact = () => {
     if (mySuperModal.current) {
       M.Modal.init(mySuperModal.current);
     }
-
-    // if (myNav.current) {
-    //   M.Sidenav.init(myNav.current);
-    // }
   }, []);
 
   const me = {

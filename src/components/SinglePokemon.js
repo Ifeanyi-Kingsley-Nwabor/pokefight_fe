@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Card from "react-bootstrap/Card";
-import { Link, useParams } from "react-router-dom";
+
+import { useParams } from "react-router-dom";
 
 const SinglePokemon = ({ selectedId }) => {
   // console.log(selectedId);
@@ -27,6 +27,7 @@ const SinglePokemon = ({ selectedId }) => {
           className="cardPhoto responsive-img hoverable"
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`}
           id="poke-fight-vs"
+          alt="pokemon"
         />
       </div>
 

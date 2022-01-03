@@ -2,7 +2,6 @@ import React, { useRef, useEffect } from "react";
 import PokemonCard from "./PokemonCard";
 import SinglePokemon from "./SinglePokemon";
 import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import M from "materialize-css";
 import versus from "../img/versus.png";
 import PlayGameModal from "./PlayGameModal";
@@ -14,13 +13,6 @@ const PokemonFight = ({
   fightWinner,
   fightLogic,
 }) => {
-  // const [fightWinner, setFightWinner] = useState(null);
-
-  // const reset = () => {
-  //   // reset();
-  //   selectedPokemon = [];
-  // };
-
   const mySuperModal = useRef();
   useEffect(() => {
     if (mySuperModal.current) {
@@ -49,7 +41,7 @@ const PokemonFight = ({
           Choose <b>two</b> contenders, then press <b>FIGHT</b>!
         </h3>
       )}
-      {selectedPokemon.length == 1 && (
+      {selectedPokemon.length === 1 && (
         <h3>
           Select a second contender, then press <b>FIGHT</b>!
         </h3>
