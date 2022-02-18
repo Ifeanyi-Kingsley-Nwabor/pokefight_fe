@@ -13,6 +13,7 @@
   /* background-image: url("./components/img/pexels.jpeg"); */
   background-repeat: repeat;
   background-origin: content-box;
+  min-height: 100vh;
 }
 
 .logo {
@@ -227,6 +228,7 @@
 
 #footer {
   margin: 0 auto;
+  position: fixed;
 }
 
 .container_footer {
